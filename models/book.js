@@ -7,6 +7,7 @@ const Book = sequelize.define('Book', {
   year: { type: DataTypes.INTEGER, allowNull: false }
 }, { 
   tableName: 'books',
-  timestamps: false });
+  timestamps: false 
+});
 
 export default Book;

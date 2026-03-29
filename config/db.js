@@ -1,8 +1,10 @@
 import { Sequelize } from 'sequelize';
-import configData from './config.js'; // Импортируем наш JS конфиг
+import configData from './config.js'; 
 
-// Выбираем настройки для разработки
-const config = configData.development;
+
+const env = process.env.NODE_ENV || 'development';
+
+const config = configData[env];
 
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
